@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Overpass:600|Source+Sans+Pro:400,700')
+
+$Overpass: 'Overpass', sans-serif
+$SourceSans: 'Source Sans Pro', sans-serif
+
+$l: "only screen and (min-width: 1200px)"
+$m: "only screen and (min-width: 992px)"
+$s: "only screen and (min-width: 576px)"
+
+$primary-color: rgb(239, 108, 0)
+$secondary-color: rgb(40, 53, 147)
+$background-color: rgb(255, 255, 255)
+
+body
+  margin: 0
+  padding: 0
+h1
+  font-family: $Overpass
+  @media #{$l}
+    font-size: 50px
+  @media #{$m}
+    font-size: 42px
+  @media #{$s}
+    font-size: 30px
+h2
+  font-family: $Overpass
+  font-size: 42px
+  @media #{$s}
+    font-size: 26px
+h3
+  font-family: $Overpass
+  font-size: 26px
+  @media #{$s}
+    font-size: 22px
+h4
+  font-family: $Overpass
+  font-size: 22px
+h5
+  font-family: $SourceSans
+  font-size: 18px
+  font-weight: 400
+  @media #{$s}
+    font-size: 16px
+p
+  font-family: $SourceSans
+  font-weight: 400
+  &.font-size-l
+    font-size: 20px
+  &.font-size-m
+    font-size: 16px
+  &.font-size-s
+    font-size: 14px
+
