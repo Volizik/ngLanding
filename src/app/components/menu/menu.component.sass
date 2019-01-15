@@ -1,0 +1,62 @@
+@import "~src/global"
+
+.menu
+  &__wrap
+    display: flex
+    align-items: center
+  &__list
+    margin: 0 auto
+    display: flex
+  &__link
+    position: relative
+    overflow: hidden
+    margin: 0 15px
+    font-family: $SourceSans
+    font-size: 16px
+    text-decoration: none
+    color: #000
+    @media #{$l}
+      &:before
+        content: ''
+        position: absolute
+        left: -100%
+        bottom: 0
+        display: block
+        width: 100%
+        height: 1px
+        background-color: #000
+        transition: left .4s
+      &:hover
+        &:before
+          left: 0
+  &__user
+    display: flex
+    flex-direction: row-reverse
+  &__user_avatar
+    margin: 0 14px 0 12px
+    width: 40px
+    height: 40px
+    object-fit: cover
+    border-radius: 50%
+  &__user_info
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    align-items: flex-end
+  &__user_name
+    font-family: $SourceSans
+    font-size: 14px
+  &__user_email
+    font-family: $SourceSans
+    font-size: 12px
+    color: #8d8c8c
+
+.sign_out-btn
+  margin: 0
+  padding: 0
+  width: 24px
+  height: 20px
+  color: #283593
+  background-color: transparent
+  border: none
+  cursor: pointer

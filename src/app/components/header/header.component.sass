@@ -1,0 +1,23 @@
+@import '~src/global'
+
+.header
+  .container
+    display: flex
+    flex-direction: column
+  &__wrap
+    color: #fff
+    background: url('~src/assets/images/bg-1.jpg') top center no-repeat
+    background-size: 100%
+    @media (min-width: 1200px)
+      background-position: center
+    @media #{$l}
+      padding: 139px 0 158px
+  &__title
+    @media #{$l}
+      margin: 0 0 31px
+      width: 444px
+  &__description
+    margin: 0 0 39px
+    @media #{$l}
+      width: 426px
+
