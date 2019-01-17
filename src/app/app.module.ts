@@ -10,6 +10,12 @@ import {ButtonComponent} from './components/button/button.component';
 import {MenuComponent} from './components/menu/menu.component';
 import {TopbarComponent} from './components/topbar/topbar.component';
 import { HeaderComponent } from './components/header/header.component';
+import { AboutComponent } from './components/about/about.component';
+import { RelationshipsComponent } from './components/relationships/relationships.component';
+import { RequirementsComponent } from './components/requirements/requirements.component';
+import { UsersComponent } from './components/users/users.component';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +23,13 @@ import { HeaderComponent } from './components/header/header.component';
         ButtonComponent,
         MenuComponent,
         TopbarComponent,
-        HeaderComponent
+        HeaderComponent,
+        AboutComponent,
+        RelationshipsComponent,
+        RequirementsComponent,
+        UsersComponent,
+        RegistrationComponent,
+        FooterComponent,
     ],
     imports: [
         BrowserModule,
