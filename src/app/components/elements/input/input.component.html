@@ -1,0 +1,20 @@
+<!-- ngSwitch используется потому, что плагин для работы с масками не работает с инпутами типа number & email -->
+<label class="input" [ngSwitch]="type">
+  <span class="input__name">{{ name | titlecase }}</span>
+
+  <input class="input__field"
+         *ngSwitchCase="'phone'"
+         [type]="type"
+         [name]="name"
+         [mask]="mask"
+         [prefix]="prefix"
+         [showMaskTyped]="true"
+         [placeholder]="placeholder"/>
+
+  <input class="input__field"
+         *ngSwitchDefault
+         [type]="type"
+         [name]="name"
+         [placeholder]="placeholder" />
+
+</label>

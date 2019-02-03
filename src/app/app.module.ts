@@ -4,9 +4,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
 import {IconSpriteModule} from 'ng-svg-icon-sprite';
+import {NgxMaskModule} from 'ngx-mask';
 
 import {AppComponent} from './app.component';
-import {ButtonComponent} from './components/button/button.component';
+import {ButtonComponent} from './components/elements/button/button.component';
 import {MenuComponent} from './components/menu/menu.component';
 import {TopbarComponent} from './components/topbar/topbar.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -16,6 +17,10 @@ import { RequirementsComponent } from './components/requirements/requirements.co
 import { UsersComponent } from './components/users/users.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { InputComponent } from './components/elements/input/input.component';
+import { SelectComponent } from './components/elements/select/select.component';
+import { InputFileComponent } from './components/elements/input-file/input-file.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 @NgModule({
     declarations: [
@@ -30,13 +35,18 @@ import { FooterComponent } from './components/footer/footer.component';
         UsersComponent,
         RegistrationComponent,
         FooterComponent,
+        InputComponent,
+        SelectComponent,
+        InputFileComponent,
+        NavigationComponent,
     ],
     imports: [
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
-        IconSpriteModule
+        IconSpriteModule,
+        NgxMaskModule.forRoot()
     ],
     providers: [],
     bootstrap: [AppComponent]

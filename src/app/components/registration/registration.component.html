@@ -1,3 +1,19 @@
-<p>
-  registration works!
-</p>
+<section class="registration">
+  <div class="container">
+    <h2 class="title">Register to get a work</h2>
+    <h5 class="registration__subtitle">Attention! After successful registration and alert, update the list of users in the block from the top</h5>
+    <div class="registration__wrap">
+      <app-input class="app-input_1" type="text" name="name" placeholder="Your name"></app-input>
+      <app-input class="app-input_2" type="email" name="email" placeholder="Your email"></app-input>
+      <app-input class="app-input_3" type="phone"
+                 name="phone"
+                 mask="(000) 000 00 00"
+                 prefix="+38 "
+                 placeholder="+38 (___)  ___ __ __">
+      </app-input>
+      <app-select class="app-select" [options]="positions"></app-select>
+      <app-input-file class="app-input-file"></app-input-file>
+    </div>
+    <app-button disabled="disabled" type="primary">Sign Up</app-button>
+  </div>
+</section>

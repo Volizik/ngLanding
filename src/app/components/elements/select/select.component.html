@@ -1,0 +1,6 @@
+<label class="select">
+  <select>
+    <option value="" selected disabled hidden>Select your position</option>
+    <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+  </select>
+</label>
