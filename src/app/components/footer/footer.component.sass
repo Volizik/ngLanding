@@ -4,63 +4,80 @@
   font-family: $SourceSans
   color: #fff
   background-color: #283593
+
   /deep/ app-navigation a
     color: #fff
+
     &:before
       background-color: #fff
+
   .container
     padding: 30px 0
+
   &__hr
     margin: 0
     height: 1px
     color: #5f5fc4
     background-color: #5f5fc4
     border: none
+
   &__top
     display: flex
     justify-content: space-between
+
   &__contact
     display: flex
     flex-direction: column
+
     &_item
       margin-bottom: 23px
       display: flex
       align-items: center
+
     &_icon
       margin-right: 10px
       display: inline-flex
       justify-content: center
       align-items: center
       width: 24px
+
       svg-icon-sprite
         display: flex
+
     &_text
       display: flex
       align-items: center
       font-size: 20px
       line-height: 1
+
   &__bottom
     display: flex
     flex-wrap: wrap
+
   &__menu
     columns: 150px 4
     margin-left: auto
     text-align: right
+
     &_link
       margin-bottom: 14px
       display: block
       text-decoration: none
       color: #fff
+
       &:hover
         text-decoration: underline
+
   &__copyright
     margin-top: 20px
     display: block
     flex-basis: 50%
+
   &__social
     margin-top: 20px
     margin-left: auto
     display: block
+
     &_link
       display: inline-block
       margin-left: 20px

@@ -1,8 +1,9 @@
 <nav class="navigation">
-  <a href="#" class="navigation__link">About me</a>
-  <a href="#" class="navigation__link">Relationships</a>
-  <a href="#" class="navigation__link">Requirements</a>
-  <a href="#" class="navigation__link">Users</a>
-  <a href="#" class="navigation__link">Sign Up</a>
-  <a href="#" class="navigation__link hidden-l">Sign Out</a>
+    <a *ngFor="let item of navigationLinks"
+       href="#{{item.link}}"
+       class="navigation__link {{ item.className }}"
+       (click)="scrollTo(item.link, $event)"
+    >
+        {{ item.name }}
+    </a>
 </nav>

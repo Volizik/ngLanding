@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {IRelationshipItem} from '../../interfaces';
+
+export interface IRelationshipItem {
+  imgPath: string;
+  imgName: string;
+  title: string;
+  text: string;
+}
 
 @Component({
   selector: 'app-relationships',
