@@ -1,23 +1,48 @@
+@import '~src/global'
+
 .requirements
   padding-bottom: 154px
   color: #fff
   background: url('~src/assets/images/bg-2.jpg') center center no-repeat
   background-size: 100%
+  @media #{$lte-m}
+    background-size: cover
+
   .container
     display: flex
     flex-direction: column
+
   .title
     margin-bottom: 50px
+    @media #{$lte-m}
+      margin: 20px auto
+      max-width: 450px
+
   &__wrap
     display: flex
     flex-direction: row-reverse
     justify-content: space-between
+    @media #{$s}
+      flex-direction: column
+      align-items: center
+      text-align: center
+
   &__image
     margin-left: 50px
     flex-shrink: 0
-    width: 429px
-    height: 361px
+    @media #{$l}
+      width: 429px
+      height: 361px
+    @media #{$m}
+      width: 343px
+      height: 407px
+    @media #{$s}
+      margin: 0
+      width: 257px
+      height: 216px
+
   &__text
     flex-grow: 1
+
   &__paragraph
     margin: 0 0 20px

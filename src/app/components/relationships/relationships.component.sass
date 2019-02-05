@@ -1,16 +1,39 @@
+@import '~src/global'
+
 .relationship
   margin-bottom: 140px
+
   .container
     display: flex
     flex-direction: column
     align-items: center
+
   .title
     margin-bottom: 51px
     max-width: 535px
+
   &__wrap
     display: flex
     flex-wrap: wrap
     justify-content: space-between
     width: 100%
+    @media #{$lte-m}
+      flex-direction: column
+    @media #{$s}
+      align-items: center
+
   &__item
     max-width: 290px
+    @media #{$lte-m}
+      display: flex
+    @media #{$m}
+      max-width: 100%
+    @media #{$s}
+      flex-direction: column
+      align-items: center
+      text-align: center
+    &_img
+      flex-shrink: 0
+      @media #{$m}
+        margin-right: 20px
+

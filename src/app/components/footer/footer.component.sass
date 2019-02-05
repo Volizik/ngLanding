@@ -7,12 +7,16 @@
 
   /deep/ app-navigation a
     color: #fff
-
     &:before
       background-color: #fff
 
   .container
     padding: 30px 0
+    @media #{$s}
+      display: flex
+      flex-direction: column
+      align-items: center
+      text-align: center
 
   &__hr
     margin: 0
@@ -25,25 +29,29 @@
     display: flex
     justify-content: space-between
 
+  &__logo
+    @media #{$s}
+      margin-bottom: 10px
+
   &__contact
     display: flex
     flex-direction: column
-
     &_item
       margin-bottom: 23px
       display: flex
       align-items: center
-
+      @media #{$s}
+        justify-content: center
     &_icon
       margin-right: 10px
       display: inline-flex
       justify-content: center
       align-items: center
       width: 24px
-
+      @media #{$lte-m}
+        display: none
       svg-icon-sprite
         display: flex
-
     &_text
       display: flex
       align-items: center
@@ -58,13 +66,15 @@
     columns: 150px 4
     margin-left: auto
     text-align: right
-
+    @media #{$m}
+      columns: 120px 4
+    @media #{$s}
+      display: none
     &_link
       margin-bottom: 14px
       display: block
       text-decoration: none
       color: #fff
-
       &:hover
         text-decoration: underline
 
@@ -72,12 +82,15 @@
     margin-top: 20px
     display: block
     flex-basis: 50%
+    @media #{$s}
+      order: 1
 
   &__social
     margin-top: 20px
     margin-left: auto
     display: block
-
+    @media #{$s}
+      margin-left: 0
     &_link
       display: inline-block
       margin-left: 20px

@@ -9,6 +9,9 @@
   font-family: $SourceSans
   border: 1px solid #b7b7b7
   border-radius: 4px
+  @media #{$m}
+    min-width: 220px
+
   &__name
     position: absolute
     top: -8px
@@ -17,6 +20,7 @@
     font-size: 12px
     color: #8d8c8c
     background-color: #fff
+
   &__field
     padding: 0 16px
     box-sizing: border-box

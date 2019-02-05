@@ -1,6 +1,8 @@
 @import "~src/global"
 
 .menu
+  @media #{$lte-m}
+    display: none
   /deep/ app-navigation a
     color: #000
     &:before

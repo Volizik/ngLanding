@@ -4,8 +4,10 @@
         <div class="relationship__wrap">
             <div class="relationship__item" *ngFor="let item of relationshipItems">
                 <img [src]="item.imgPath" [alt]="item.imgName" class="relationship__item_img">
-                <h3 class="relationship__item_title">{{ item.title }}</h3>
-                <p class="relationship__item_text">{{ item.text }}</p>
+                <div class="relationship__item_wrap">
+                    <h3 class="relationship__item_title">{{ item.title }}</h3>
+                    <p class="relationship__item_text">{{ item.text }}</p>
+                </div>
             </div>
         </div>
     </div>
