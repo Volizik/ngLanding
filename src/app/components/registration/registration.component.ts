@@ -7,8 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationComponent implements OnInit {
 
-  positions =  ['Frontend developer', 'Backend developer', 'Designer', 'Manager'];
-
   constructor() { }
 
   ngOnInit() {

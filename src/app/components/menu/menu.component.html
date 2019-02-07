@@ -6,10 +6,10 @@
         </div>
 
         <div class="menu__user">
-            <img src="./assets/images/user-superstar-2x.jpg" alt="user avatar" class="menu__user_avatar">
+            <img [src]="userData.photo" alt="user avatar" class="menu__user_avatar">
             <div class="menu__user_info">
-                <strong class="menu__user_name">Superstar</strong>
-                <span class="menu__user_email">Superstar@gmail.com</span>
+                <strong class="menu__user_name">{{ userData.name }}</strong>
+                <span class="menu__user_email">{{ userData.email }}</span>
             </div>
         </div>
 

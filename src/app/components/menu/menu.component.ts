@@ -1,5 +1,9 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {Subscription} from 'rxjs';
+
+import {SharedService} from '../../services/shared.service';
+import {IUser} from '../../interfaces';
 
 @Component({
     selector: 'app-menu',
@@ -27,14 +31,30 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
         ])
     ]
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent implements OnInit, OnDestroy {
 
     @Input() currentState;
+    private userSubscription: Subscription;
+    public userData: IUser = {
+        email: '',
+        name: '',
+        id: '',
+        phone: '',
+        photo: '',
+        position: '',
+        position_ad: ''
+    };
 
-    constructor() {
+    constructor(private sharedService: SharedService) {}
+
+    ngOnInit(): void {
+        this.userSubscription = this.sharedService.getCurrentUserData().subscribe(data => {
+            this.userData = data.user;
+        });
     }
 
-    ngOnInit() {
+    ngOnDestroy(): void {
+        this.userSubscription.unsubscribe();
     }
 
 }
