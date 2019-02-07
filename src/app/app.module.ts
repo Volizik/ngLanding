@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {IconSpriteModule} from 'ng-svg-icon-sprite';
 import {NgxMaskModule} from 'ngx-mask';
@@ -46,7 +47,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
         ReactiveFormsModule,
         HttpClientModule,
         IconSpriteModule,
-        NgxMaskModule.forRoot()
+        NgxMaskModule.forRoot(),
+        BrowserAnimationsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

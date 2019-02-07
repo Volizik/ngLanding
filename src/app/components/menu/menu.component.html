@@ -1,5 +1,5 @@
-<div class="menu">
-    <div class="menu__wrap">
+<div class="menu" [@toggleOverlay]="currentState">
+    <div class="menu__wrap" (click)="$event.stopPropagation()" [@toggleMenu]="currentState">
 
         <div class="menu__navigation">
             <app-navigation></app-navigation>

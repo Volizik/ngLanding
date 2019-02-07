@@ -9,11 +9,11 @@
             </svg-icon-sprite>
         </div>
 
-        <div class="topbar__menu">
-            <app-menu></app-menu>
+        <div class="topbar__menu" (click)="hideMenu()">
+            <app-menu [currentState]="menuState"></app-menu>
         </div>
 
-        <button class="topbar__menu_btn hidden-l">
+        <button class="topbar__menu_btn hidden-l" (click)="showMenu()">
             <svg-icon-sprite
                     [src]="'./assets/images/sprite.svg#line-menu'"
                     [width]="'23px'"

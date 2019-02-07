@@ -13,4 +13,8 @@ export class AboutComponent implements OnInit {
     ngOnInit() {
     }
 
+    scrollToSignUp() {
+        document.querySelector('#signup').scrollIntoView({ behavior: 'smooth' });
+    }
+
 }

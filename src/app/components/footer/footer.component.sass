@@ -5,10 +5,14 @@
   color: #fff
   background-color: #283593
 
-  /deep/ app-navigation a
-    color: #fff
-    &:before
-      background-color: #fff
+  /deep/ app-navigation
+    .navigation
+      @media #{$s}
+        align-items: center
+    a
+      color: #fff
+      &:before
+        background-color: #fff
 
   .container
     padding: 30px 0
