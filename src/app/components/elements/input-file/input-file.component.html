@@ -1,8 +1,11 @@
 <div class="input-file">
     <div class="input-file__wrap">
-        <span class="input-file__field">Upload your photo</span>
+        <span class="input-file__field">
+            <span *ngIf="file; else fileNotSelected">{{ getFileInfo }}</span>
+            <ng-template #fileNotSelected>Upload your photo</ng-template>
+        </span>
         <label class="input-file__label">
-            <input type="file">
+            <input type="file" accept=".jpg" (change)="fileSelectHandler($event)">
             <span class="input-file__button hidden-lte-m">Upload</span>
             <span class="input-file__button hidden-l">
                 <svg-icon-sprite

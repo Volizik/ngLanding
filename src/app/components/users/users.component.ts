@@ -26,7 +26,6 @@ export class UsersComponent implements OnInit {
         this.counter++;
         this.sharedService.getUsers(this.counter).subscribe(
             data => {
-                console.log(data)
                 this.usersList.push(...data.users);
                 if (data.total_pages === data.page) { // Если запрашиваемая страница последняя - блокируем кнопку
                     event.target.setAttribute('disabled', 'disabled');
@@ -34,8 +33,6 @@ export class UsersComponent implements OnInit {
             },
             error => {
                 console.log('err', error);
-                // Если пользователей больше нет - блокируем кнопку
-                event.target.setAttribute('disabled', 'disabled');
             }
         );
     }

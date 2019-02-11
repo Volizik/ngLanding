@@ -29,8 +29,10 @@ export class NavigationComponent implements OnInit {
     }
 
     scrollTo(name: string, event: Event): void {
-        event.preventDefault();
-        document.getElementById(name).scrollIntoView({block: 'start', behavior: 'smooth'});
+        if (name) {
+            event.preventDefault();
+            document.getElementById(name).scrollIntoView({block: 'start', behavior: 'smooth'});
+        }
     }
 
 }

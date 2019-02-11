@@ -15,7 +15,8 @@
         background-color: #fff
 
   .container
-    padding: 30px 0
+    padding-top: 30px
+    padding-bottom: 30px
     @media #{$s}
       display: flex
       flex-direction: column
@@ -71,7 +72,7 @@
     margin-left: auto
     text-align: right
     @media #{$m}
-      columns: 120px 4
+      columns: 100px 4
     @media #{$s}
       display: none
     &_link
@@ -79,13 +80,20 @@
       display: block
       text-decoration: none
       color: #fff
+      white-space: nowrap
+      text-overflow: ellipsis
+      overflow: hidden
+      @media #{$l}
+        max-width: 180px
+      @media #{$m}
+        max-width: 110px
       &:hover
         text-decoration: underline
 
   &__copyright
     margin-top: 20px
     display: block
-    flex-basis: 50%
+    flex-grow: 1
     @media #{$s}
       order: 1
 
