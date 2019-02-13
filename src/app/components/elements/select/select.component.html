@@ -1,6 +1,11 @@
 <label class="select">
-  <select>
-    <option value="" selected disabled hidden>Select your position</option>
-    <option *ngFor="let position of positions" [value]="position.id">{{ position.name }}</option>
-  </select>
+    <select (change)="onSelectChange($event)">
+        <option value="" selected disabled hidden>Select your position</option>
+        <option
+                *ngFor="let position of positions | async"
+                [value]="position.id"
+        >
+            {{ position.name }}
+        </option>
+    </select>
 </label>

@@ -22,6 +22,7 @@ import { InputComponent } from './components/elements/input/input.component';
 import { SelectComponent } from './components/elements/select/select.component';
 import { InputFileComponent } from './components/elements/input-file/input-file.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { InputPhoneComponent } from './components/elements/input-phone/input-phone.component';
 
 @NgModule({
     declarations: [
@@ -40,6 +41,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
         SelectComponent,
         InputFileComponent,
         NavigationComponent,
+        InputPhoneComponent,
     ],
     imports: [
         BrowserModule,

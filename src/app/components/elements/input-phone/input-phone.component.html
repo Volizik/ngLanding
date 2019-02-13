@@ -1,0 +1,17 @@
+<label class="input">
+  <span class="input__name">{{ name | titlecase }}</span>
+
+  <input class="input__field"
+         type="tel"
+         [name]="name"
+         [mask]="mask"
+         [prefix]="prefix"
+         [showMaskTyped]="true"
+         [placeholder]="placeholder"
+         (change)="inputChange($event.target.value)"
+  />
+  <span *ngIf="errorMessages" class="input__hint">
+        <span *ngIf="errorMessages.required">This field is require!</span>
+    </span>
+
+</label>

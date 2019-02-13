@@ -2,18 +2,17 @@ import {Component, forwardRef, Input} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
 @Component({
-    selector: 'app-input',
-    templateUrl: './input.component.html',
-    styleUrls: ['./input.component.sass'],
+    selector: 'app-input-phone',
+    templateUrl: './input-phone.component.html',
+    styleUrls: ['./input-phone.component.sass'],
     providers: [{
         provide: NG_VALUE_ACCESSOR,
-        useExisting: forwardRef(() => InputComponent),
+        useExisting: forwardRef(() => InputPhoneComponent),
         multi: true
     }]
 })
-export class InputComponent implements ControlValueAccessor {
+export class InputPhoneComponent implements ControlValueAccessor {
 
-    @Input() type: 'text' | 'password' | 'email' | 'tel' = 'text';
     @Input() name = '';
     @Input() placeholder = '';
     @Input() mask = '';

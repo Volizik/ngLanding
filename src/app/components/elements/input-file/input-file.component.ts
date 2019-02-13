@@ -1,39 +1,64 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, forwardRef} from '@angular/core';
+import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
 @Component({
     selector: 'app-input-file',
     templateUrl: './input-file.component.html',
-    styleUrls: ['./input-file.component.sass']
+    styleUrls: ['./input-file.component.sass'],
+    providers: [{
+        provide: NG_VALUE_ACCESSOR,
+        useExisting: forwardRef(() => InputFileComponent),
+        multi: true
+    }]
 })
-export class InputFileComponent implements OnInit {
+export class InputFileComponent implements ControlValueAccessor {
 
     public file: File;
-    @ViewChild('fileNotSelected') fileNotSelected: ElementRef;
 
     constructor() {
-    }
-
-    ngOnInit() {
     }
 
     convertBytesToKB(bytes: number): number {
         return Number((bytes / 1024).toFixed(1));
     }
 
-    fileSelectHandler(event: Event) {
-        if (!this.allowFileSize()) {
-            this.file = event.target['files'][0];
-        }
+    allowFileSize(fileSizeInByte: number, maxSize: number = 1024 * 5): boolean {
+        const convertedSize = this.convertBytesToKB(fileSizeInByte);
+        return convertedSize <= maxSize;
     }
 
     getFileInfo(): string {
-        return `${this.file.name}, ${this.convertBytesToKB(this.file.size) }kb`;
+        return `${this.file.name}, ${this.convertBytesToKB(this.file.size)}kb`;
     }
 
-    allowFileSize(): boolean {
-        const maxSize = 1024 * 5;
-        const convertedSize = this.convertBytesToKB(this.file.size);
-        return convertedSize <= maxSize;
+    fileSelectHandler(event: Event): void {
+        const file = event.target['files'][0];
+        if (this.allowFileSize(file.size)) {
+            this.file = file;
+            this.inputChange();
+        }
     }
+
+    inputChange(): void {
+        this.writeValue(this.file);
+        this.onTouched();
+    }
+
+    // code for Accessor
+    onChange: any = () => {};
+    onTouched: any = () => {};
+
+    writeValue(file: File): void {
+        this.onChange(file);
+    }
+
+    registerOnChange(fn: any): void {
+        this.onChange = fn;
+    }
+
+    registerOnTouched(fn: any): void {
+        this.onTouched = fn;
+    }
+
 
 }

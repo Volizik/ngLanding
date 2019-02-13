@@ -6,13 +6,13 @@
       <div class="users__item" *ngFor="let user of usersList">
         <img [src]="user.photo" alt="user avatar" class="users__avatar">
         <div class="users__info">
-          <h4 class="users__name">{{ user.name }}</h4>
-          <span class="users__info_text">{{ user.position }}</span>
-          <span class="users__info_text">{{ user.email }}</span>
-          <span class="users__info_text">{{ user.phone }}</span>
+          <h4 class="users__name" [title]="user.name">{{ user.name }}</h4>
+          <span class="users__info_text" [title]="user.position">{{ user.position }}</span>
+          <span class="users__info_text" [title]="user.email">{{ user.email }}</span>
+          <span class="users__info_text" [title]="user.phone">{{ user.phone }}</span>
         </div>
       </div>
     </div>
-    <app-button type="secondary" (click)="getUsers($event)">Show more</app-button>
+    <app-button styleType="secondary" (click)="getUsers($event)">Show more</app-button>
   </div>
 </section>

@@ -1,4 +1,4 @@
-@import "~src/global"
+@import '~src/styles/global'
 
 $hover-color: #f9864b
 
@@ -23,17 +23,22 @@ $hover-color: #f9864b
     padding-left: 15px
     display: flex
     align-items: center
-    flex-grow: 1
+    width: calc(100% - 130px)
     font-size: 16px
     color: #8d8c8c
     border: 1px solid #b7b7b7
     border-right: none
     border-radius: 4px 0 0 4px
+    span
+      +overflow-text(100%)
+    .error
+      color: red
 
   &__label
     position: relative
     box-sizing: border-box
     display: block
+    flex-shrink: 0
     height: 100%
     width: 130px
     border: 2px solid #ea7019

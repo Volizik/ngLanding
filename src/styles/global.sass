@@ -50,3 +50,12 @@ $background-color: rgb(255, 255, 255)
     display: none !important
 
 
+@mixin overflow-text($width: 'auto')
+  position: relative
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+  @if($width != 'auto')
+    width: $width
+
+

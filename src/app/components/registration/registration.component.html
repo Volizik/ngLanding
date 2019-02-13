@@ -1,19 +1,43 @@
 <section class="registration" id="signup">
-  <div class="container">
-    <h2 class="title">Register to get a work</h2>
-    <h5 class="registration__subtitle">Attention! After successful registration and alert, update the list of users in the block from the top</h5>
-    <div class="registration__wrap">
-      <app-input class="app-input_1" type="text" name="name" placeholder="Your name"></app-input>
-      <app-input class="app-input_2" type="email" name="email" placeholder="Your email"></app-input>
-      <app-input class="app-input_3" type="phone"
-                 name="phone"
-                 mask="(000) 000 00 00"
-                 prefix="+38 "
-                 placeholder="+38 (___)  ___ __ __">
-      </app-input>
-      <app-select class="app-select"></app-select>
-      <app-input-file class="app-input-file"></app-input-file>
+    <div class="container">
+        <h2 class="title">Register to get a work</h2>
+        <h5 class="registration__subtitle">Attention! After successful registration and alert, update the list of users in the block from the top</h5>
+        <form [formGroup]="regForm" (ngSubmit)="submit()">
+            <div class="registration__wrap">
+
+                <app-input
+                        class="app-input_1"
+                        type="text"
+                        name="name"
+                        placeholder="Your name"
+                        formControlName="name"
+                        [errorMessages]="formControls.name.touched ? formControls.name.errors : null"
+                ></app-input>
+
+                <app-input
+                        class="app-input_2"
+                        type="email"
+                        name="email"
+                        placeholder="Your email"
+                        formControlName="email"
+                        [errorMessages]="formControls.email.touched ? formControls.email.errors : null"
+                ></app-input>
+
+                <app-input
+                        class="app-input_3"
+                        type="tel"
+                        name="phone"
+                        placeholder="+38 (___)  ___ __ __"
+                        formControlName="phone"
+                        [errorMessages]="formControls.phone.touched ? formControls.phone.errors : null"
+                ></app-input>
+
+                <app-select class="app-select" formControlName="positions"></app-select>
+
+                <app-input-file class="app-input-file" formControlName="photo"></app-input-file>
+
+            </div>
+            <app-button [disabled]="regForm.invalid" styleType="primary" type="submit">Sign Up</app-button>
+        </form>
     </div>
-    <app-button disabled="disabled" type="primary">Sign Up</app-button>
-  </div>
 </section>

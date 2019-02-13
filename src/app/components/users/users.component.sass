@@ -1,4 +1,4 @@
-@import '~src/global'
+@import '~src/styles/global'
 
 .users
   padding-bottom: 20px
@@ -47,11 +47,16 @@
 
   &__info
     flex-grow: 1
+    +overflow-text(calc(100% - 79px)) // 100% минус ширина картинки плюс ее отступ
+    @media #{$s}
+      +overflow-text(100%) // 100% минус ширина картинки плюс ее отступ
 
   &__info_text
     display: block
     font-size: 14px
     color: #4c4b4b
+    +overflow-text()
 
   &__name
     margin: 25px 0 18px
+    +overflow-text()
