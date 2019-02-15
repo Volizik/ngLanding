@@ -3,9 +3,11 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {StoreModule} from '@ngrx/store';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 
 import {IconSpriteModule} from 'ng-svg-icon-sprite';
-import {NgxMaskModule} from 'ngx-mask';
+import {NgxSmartModalModule} from 'ngx-smart-modal';
 
 import {AppComponent} from './app.component';
 import {ButtonComponent} from './components/elements/button/button.component';
@@ -22,7 +24,8 @@ import { InputComponent } from './components/elements/input/input.component';
 import { SelectComponent } from './components/elements/select/select.component';
 import { InputFileComponent } from './components/elements/input-file/input-file.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { InputPhoneComponent } from './components/elements/input-phone/input-phone.component';
+
+import { appReducer } from './store/app.reducer';
 
 @NgModule({
     declarations: [
@@ -41,7 +44,6 @@ import { InputPhoneComponent } from './components/elements/input-phone/input-pho
         SelectComponent,
         InputFileComponent,
         NavigationComponent,
-        InputPhoneComponent,
     ],
     imports: [
         BrowserModule,
@@ -49,8 +51,12 @@ import { InputPhoneComponent } from './components/elements/input-phone/input-pho
         ReactiveFormsModule,
         HttpClientModule,
         IconSpriteModule,
-        NgxMaskModule.forRoot(),
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        StoreModule.forRoot({appState: appReducer}),
+        StoreDevtoolsModule.instrument({
+            maxAge: 25, // Retains last 25 states
+        }),
+        NgxSmartModalModule.forRoot()
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Overpass:600|Source+Sans+Pro:400,700')
 @import "styles/global"
+@import "~ngx-smart-modal/ngx-smart-modal"
 
 body
   margin: 0
@@ -41,4 +42,23 @@ p
     font-size: 16px
   &.font-size-s
     font-size: 14px
+
+// Modal
+.modal
+ justify-content: center
+ .nsm-body
+   display: flex
+   flex-direction: column
+   padding: 10px
+   width: 230px
+   text-align: left
+   h4
+     margin: 0 0 5px
+   p
+     margin: 0 0 30px
+     color: #4e4e4e
+   app-button
+     margin-left: auto
+ .nsm-dialog-btn-close
+   display: none
 

@@ -1,8 +1,13 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
-import {environment} from '../../environments/environment';
 import {Observable} from 'rxjs';
+import {Store} from '@ngrx/store';
+
+import {environment} from '../../environments/environment';
 import {IPositionsResponse, IUserResponse, IUsersResponse} from '../interfaces';
+import {AppState} from '../store/app.state';
+import {LoadMoreUsers, LoadUsersList, SetToken} from '../store/app.actions';
+import {map} from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
@@ -11,8 +16,7 @@ export class SharedService {
 
     private token = '';
 
-    constructor(private http: HttpClient) {
-    }
+    constructor(private http: HttpClient, private store: Store<AppState>) {}
 
     getCurrentUserData(): Observable<IUserResponse> {
         return this.http.get<IUserResponse>(`${environment.api_url}/users/1`);
@@ -30,11 +34,12 @@ export class SharedService {
     getToken(): void {
         this.http.get(`${environment.api_url}/token`).subscribe((data) => {
             this.token = data['token'];
+            this.store.dispatch(new SetToken(data['token'])); // Сохраняем токен в стор
         });
     }
 
     registerUser(data: FormData): Observable<object> {
-        return this.http.post(`${environment.api_url}/users`, data, {headers: {'Token': this.token}});
+        return this.http.post(`${environment.api_url}/users`, data, {headers: {'Token': this.token}})
     }
 
 }

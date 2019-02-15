@@ -37,7 +37,14 @@
                 <app-input-file class="app-input-file" formControlName="photo"></app-input-file>
 
             </div>
+            <p class="error-message" *ngIf="regErrorMessage">{{ regErrorMessage }}</p>
             <app-button [disabled]="regForm.invalid" styleType="primary" type="submit">Sign Up</app-button>
         </form>
+
+        <ngx-smart-modal #myModal identifier="myModal" customClass="nsm-centered modal">
+            <h4>Congratulations</h4>
+            <p>You have successfully passed the registration</p>
+            <app-button (click)="myModal.close()">OK</app-button>
+        </ngx-smart-modal>
     </div>
 </section>
