@@ -2,6 +2,10 @@
 
 .relationship
   margin-bottom: 140px
+  @media #{$m}
+    margin-bottom: 81px
+  @media #{$s}
+    margin-bottom: 38px
 
   .container
     display: flex
@@ -9,8 +13,16 @@
     align-items: center
 
   .title
-    margin-bottom: 51px
+    margin-top: 77px
+    margin-bottom: 44px
     max-width: 535px
+    @media #{$m}
+      margin-top: 135px
+      margin-bottom: 35px
+    @media #{$s}
+      margin-top: 67px
+      margin-bottom: 30px
+      line-height: 32px
 
   &__wrap
     display: flex
@@ -18,22 +30,37 @@
     justify-content: space-between
     width: 100%
     @media #{$lte-m}
+      max-width: 595px
       flex-direction: column
     @media #{$s}
       align-items: center
 
   &__item
-    max-width: 290px
+    max-width: 355px
     @media #{$lte-m}
       display: flex
     @media #{$m}
+      margin-bottom: 36px
       max-width: 100%
     @media #{$s}
+      margin-bottom: 32px
       flex-direction: column
       align-items: center
       text-align: center
     &_img
       flex-shrink: 0
       @media #{$m}
-        margin-right: 20px
+        margin-right: 35px
+        width: 90px
+      @media #{$s}
+        width: 87px
+    &_title
+      margin: 17px 0 6px
+      @media #{$m}
+        margin: 4px 0 2px
+      @media #{$s}
+        margin: 10px 0 0
+    &_text
+      margin: 0
+      line-height: 22px
 

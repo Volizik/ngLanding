@@ -17,7 +17,7 @@
     a
       color: #000
       @media #{$lte-m}
-        margin: 0 0 15px
+        margin: 0 0 24px
       &:before
         background-color: #000
 
@@ -38,14 +38,14 @@
       margin: 0 auto
     @media #{$lte-m}
       order: 1
-      padding: 25px 15px 15px
+      padding: 29px 15px 15px
       box-sizing: border-box
 
   &__user
     display: flex
     flex-direction: row-reverse
     @media #{$lte-m}
-      padding: 25px 15px 15px
+      padding: 25px 15px
       box-sizing: border-box
       flex-direction: column
       border-bottom: 1px solid #ccc
@@ -70,12 +70,13 @@
       align-items: flex-start
 
   &__user_name
+    margin-bottom: 3px
     font-family: $SourceSans
-    font-size: 14px
+    font-size: 19px
 
   &__user_email
     font-family: $SourceSans
-    font-size: 12px
+    font-size: 13px
     color: #8d8c8c
 
 .sign_out-btn

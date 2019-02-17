@@ -1,22 +1,27 @@
 @import '~src/styles/global'
 
 .requirements
-  padding-bottom: 154px
+  padding-bottom: 104px
   color: #fff
   background: url('~src/assets/images/bg-2.jpg') center center no-repeat
   background-size: 100%
   @media #{$lte-m}
     background-size: cover
-
+  @media #{$s}
+    padding-bottom: 49px
   .container
     display: flex
     flex-direction: column
 
   .title
-    margin-bottom: 50px
-    @media #{$lte-m}
-      margin: 20px auto
+    margin-bottom: 39px
+    @media #{$m}
+      margin: 114px auto 35px
       max-width: 450px
+    @media #{$s}
+      margin: 66px auto 25px
+      max-width: 450px
+      line-height: 32px
 
   &__wrap
     display: flex
@@ -28,18 +33,25 @@
       text-align: center
 
   &__image
-    margin-left: 50px
     flex-shrink: 0
     @media #{$l}
+      margin: 2px 58px 0 100px
       width: 429px
       height: 361px
+      background: url('~src/assets/images/man-laptop-v1.svg') center center no-repeat
+      background-size: contain
     @media #{$m}
+      margin: 2px 2px 0 45px
       width: 343px
       height: 407px
+      background: url('~src/assets/images/man-laptop-v2.svg') center center no-repeat
+      background-size: contain
     @media #{$s}
-      margin: 0
+      margin: 0 0 23px
       width: 257px
       height: 216px
+      background: url('~src/assets/images/man-laptop-v1.svg') center center no-repeat
+      background-size: contain
 
   &__text
     flex-grow: 1

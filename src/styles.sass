@@ -40,8 +40,15 @@ p
     font-size: 20px
   &.font-size-m
     font-size: 16px
+    line-height: 22px
   &.font-size-s
     font-size: 14px
+  &.font-size-auto
+    @media #{$l}
+      font-size: 16px
+      line-height: 22px
+    @media #{$lte-m}
+      font-size: 14px
 
 // Modal
 .modal

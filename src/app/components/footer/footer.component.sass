@@ -10,27 +10,25 @@
       @media #{$s}
         align-items: center
     a
+      @media #{$s}
+        margin-bottom: 6px
       color: #fff
       &:before
         background-color: #fff
+      &:last-of-type
+        display: none
 
   .container
-    padding-top: 30px
-    padding-bottom: 30px
+    border-bottom: 1px solid #5f5fc4
     @media #{$s}
       display: flex
       flex-direction: column
       align-items: center
       text-align: center
 
-  &__hr
-    margin: 0
-    height: 1px
-    color: #5f5fc4
-    background-color: #5f5fc4
-    border: none
-
   &__top
+    padding-top: 30px
+    padding-bottom: 27px
     display: flex
     justify-content: space-between
 
@@ -45,7 +43,11 @@
       margin-bottom: 23px
       display: flex
       align-items: center
+      @media #{$m}
+        &:last-of-type
+          margin-bottom: 13px
       @media #{$s}
+        margin-bottom: 11px
         justify-content: center
     &_icon
       margin-right: 10px
@@ -60,23 +62,32 @@
     &_text
       display: flex
       align-items: center
-      font-size: 20px
-      line-height: 1
+      @media #{$l}
+        font-size: 20px
+        line-height: 1
+      @media #{$lte-m}
+        font-size: 18px
 
   &__bottom
+    padding-top: 25px
+    padding-bottom: 27px
     display: flex
     flex-wrap: wrap
 
   &__menu
-    columns: 150px 4
+    columns: 175px 4
     margin-left: auto
+    flex-grow: 1
+    max-width: 761px
+    width: 100%
     text-align: right
     @media #{$m}
-      columns: 100px 4
+      columns: 100px
+      max-width: 485px
     @media #{$s}
       display: none
     &_link
-      margin-bottom: 14px
+      margin-bottom: 10px
       display: block
       text-decoration: none
       color: #fff
@@ -84,7 +95,7 @@
       text-overflow: ellipsis
       overflow: hidden
       @media #{$l}
-        max-width: 180px
+        max-width: 200px
       @media #{$m}
         max-width: 110px
       &:hover
@@ -94,7 +105,9 @@
     margin-top: 20px
     display: block
     flex-grow: 1
+    font-size: 12px
     @media #{$s}
+      margin-top: 10px
       order: 1
 
   &__social
@@ -103,8 +116,13 @@
     display: block
     @media #{$s}
       margin-left: 0
+      display: flex
+      justify-content: space-between
+      width: 210px
     &_link
       display: inline-block
       margin-left: 20px
       color: #fff
+      @media #{$s}
+        margin: 0
 

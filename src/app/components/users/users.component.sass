@@ -1,7 +1,7 @@
 @import '~src/styles/global'
 
 .users
-  padding-bottom: 20px
+  padding-bottom: 15px
 
   .container
     display: flex
@@ -9,30 +9,44 @@
     align-items: center
 
   .title
-    margin-bottom: 30px
+    margin-bottom: 14px
+    @media #{$s}
+      margin-bottom: 0
 
   &__subtitle
-    margin: 0 auto 59px
     line-height: 1
+    @media #{$l}
+      margin: 0 auto 59px
+    @media #{$lte-m}
+      margin: 0 auto 40px
+    @media #{$s}
+      margin: 3px auto 29px
+      width: 160px
+      text-align: center
+      line-height: 22px
 
   &__wrap
-    margin-bottom: 56px
     display: flex
     flex-wrap: wrap
     justify-content: space-between
     width: 100%
+    @media #{$lte-m}
+      margin-bottom: 22px
     @media #{$s}
       flex-direction: column
       align-items: center
 
   &__item
+    margin-bottom: 60px
     display: flex
-    width: 30%
+    width: 31%
     @media #{$lte-m}
+      margin-bottom: 36px
       flex-direction: column
       align-items: center
       text-align: center
     @media #{$s}
+      margin-bottom: 30px
       width: 100%
       max-width: 280px
 
@@ -47,16 +61,16 @@
 
   &__info
     flex-grow: 1
-    +overflow-text(calc(100% - 79px)) // 100% минус ширина картинки плюс ее отступ
-    @media #{$s}
-      +overflow-text(100%) // 100% минус ширина картинки плюс ее отступ
 
   &__info_text
     display: block
     font-size: 14px
+    line-height: 17px
     color: #4c4b4b
     +overflow-text()
 
   &__name
-    margin: 25px 0 18px
-    +overflow-text()
+    margin: 22px 0 11px
+    line-height: 27px
+    @media #{$lte-m}
+      margin: 12px 0 8px

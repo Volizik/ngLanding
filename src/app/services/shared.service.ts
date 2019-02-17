@@ -26,7 +26,8 @@ export class SharedService {
         return this.http.get<IPositionsResponse>(`${environment.api_url}/positions`);
     }
 
-    getUsers(page: number = 1, count: number = 6): Observable<IUsersResponse> {
+    getUsers(page: number = 1): Observable<IUsersResponse> {
+        const count = window.innerWidth > 767 ? 6 : 3; // Для моб устройств выводить по три пользователя
         const params = new HttpParams().set('page', `${page}`).set('count', `${count}`);
         return this.http.get<IUsersResponse>(`${environment.api_url}/users`, {params: params});
     }
@@ -39,7 +40,7 @@ export class SharedService {
     }
 
     registerUser(data: FormData): Observable<object> {
-        return this.http.post(`${environment.api_url}/users`, data, {headers: {'Token': this.token}})
+        return this.http.post(`${environment.api_url}/users`, data, {headers: {'Token': this.token}});
     }
 
 }

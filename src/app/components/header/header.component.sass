@@ -1,7 +1,7 @@
 @import '~src/styles/global'
 
 .header
-  margin-top: 64px // на высоту топбара
+  margin-top: 62px // на высоту топбара
   .container
     display: flex
     flex-direction: column
@@ -13,30 +13,45 @@
     @media (min-width: 1200px)
       background-position: center
     @media #{$l}
-      padding: 139px 0 158px
+      padding: 130px 0 140px
     @media #{$lte-m}
       background-size: cover
     @media #{$m}
-      padding: 139px 0 158px
+      padding: 115px 0 120px
       background-position-x: left
     @media #{$s}
-      padding: 70px 0
+      padding: 47px 0 70px
       text-align: center
 
   &__title
     width: 100%
     @media #{$l}
-      margin: 0 0 31px
-      max-width: 444px
+      margin: 0 0 16px
+      line-height: 61px
+      max-width: 450px
     @media #{$m}
-      margin: 0 0 31px
+      margin: 0 0 19px
+      line-height: 50px
       max-width: 385px
+    @media #{$s}
+      margin-bottom: 13px
+      line-height: 33px
 
   &__description
-    margin: 0 0 39px
+    margin: 0
     width: 100%
     @media #{$l}
-      max-width: 426px
+      margin-bottom: 39px
+      max-width: 500px
+      font-size: 20px
     @media #{$m}
+      margin-bottom: 33px
       max-width: 385px
+      font-size: 18px
+      line-height: 24px
+    @media #{$s}
+      margin-bottom: 37px
+      line-height: 22px
+      .hidden-mob
+        display: none
 

@@ -16,19 +16,25 @@ $background-color: rgb(255, 255, 255)
   width: 100%
   padding: 0 10px
   @media #{$s}
+    padding: 0 14px
     width: 100%
   @media #{$m}
+    padding: 0 22px
     width: 768px
-    padding: 0 15px
   @media #{$l}
-    width: 100%
-    max-width: 1170px
     padding: 0 15px
+    max-width: 1170px
+    width: 100%
 
 
 .title
-  margin-top: 140px
+  margin-top: 135px
   text-align: center
+  line-height: 52px
+  @media #{$m}
+    margin-top: 113px
+  @media #{$s}
+    margin-top: 56px
 
 .error-message
   display: block

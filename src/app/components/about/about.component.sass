@@ -6,8 +6,11 @@
     flex-direction: column
 
   .title
-    margin-bottom: 29px
+    margin-bottom: 22px
     width: 100%
+    @media #{$s}
+      margin-top: 56px
+      margin-bottom: 16px
 
   &__wrap
     display: flex
@@ -17,12 +20,13 @@
       text-align: center
 
   &__image
-    margin-right: 30px
+    margin: 22px 64px 0 39px
     flex-shrink: 0
     @media #{$l}
       width: 289px
       height: 285px
     @media #{$lte-m}
+      margin: 22px 29px 0 3px
       width: 219px
       height: 216px
     @media #{$s}
@@ -33,11 +37,23 @@
     flex-direction: column
 
   &__text_title
-    margin: 23px 0 14px
+    margin: 23px 0 7px
     line-height: 1
+    @media #{$m}
+      margin: 23px 0 11px
+    @media #{$s}
+      margin: 30px auto 14px
+      width: 278px
+      line-height: 24px
 
   &__text_paragraph
-    margin: 0 0 26px
-    line-height: 22px
+    margin: 0 0 22px
     color: #4c4b4b
+    &:last-of-type
+      @media #{$l}
+        margin-bottom: 12px
+      @media #{$m}
+        margin-bottom: 20px
+      @media #{$s}
+        margin-bottom: 16px
 
