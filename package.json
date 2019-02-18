@@ -3,12 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "create-icon-sprite": "svg2sprite ./src/assets/images/svg_icons ./src/assets/images/sprite.svg --stripAttrs fill --stripAttrs stroke --stripAttrs id"
+    "create-icon-sprite": "svg2sprite ./src/assets/images/svg_icons ./src/assets/images/sprite.svg --stripAttrs fill --stripAttrs stroke --stripAttrs id",
+    "preinstall": "npm install -g @angular/cli @angular/compiler-cli typescript",
+    "postinstall": "ng build --prod"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +27,7 @@
     "@ngrx/store": "^7.2.0",
     "@ngrx/store-devtools": "^7.2.0",
     "core-js": "^2.5.4",
+    "express": "^4.16.4",
     "hammerjs": "^2.0.8",
     "ngx-mask": "^7.3.3",
     "ngx-smart-modal": "^7.1.1",
@@ -53,5 +56,9 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.1.6"
+  },
+  "engines": {
+    "node": "8.11.4",
+    "npm": "6.8.0"
   }
 }
