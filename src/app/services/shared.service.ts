@@ -1,22 +1,25 @@
-import {Injectable} from '@angular/core';
+import {Injectable, OnDestroy} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
-import {Observable} from 'rxjs';
 import {Store} from '@ngrx/store';
+import {Observable} from 'rxjs';
+import {takeWhile} from 'rxjs/operators';
 
 import {environment} from '../../environments/environment';
 import {IPositionsResponse, IUserResponse, IUsersResponse} from '../interfaces';
 import {AppState} from '../store/app.state';
-import {LoadMoreUsers, LoadUsersList, SetToken} from '../store/app.actions';
-import {map} from 'rxjs/operators';
+import {SetToken} from '../store/app.actions';
 
 @Injectable({
     providedIn: 'root'
 })
-export class SharedService {
+export class SharedService implements OnDestroy {
 
     private token = '';
+    private alive: boolean;
 
-    constructor(private http: HttpClient, private store: Store<AppState>) {}
+    constructor(private http: HttpClient, private store: Store<AppState>) {
+        this.alive = true;
+    }
 
     getCurrentUserData(): Observable<IUserResponse> {
         return this.http.get<IUserResponse>(`${environment.api_url}/users/1`);
@@ -33,14 +36,20 @@ export class SharedService {
     }
 
     getToken(): void {
-        this.http.get(`${environment.api_url}/token`).subscribe((data) => {
-            this.token = data['token'];
-            this.store.dispatch(new SetToken(data['token'])); // Сохраняем токен в стор
-        });
+        this.http.get(`${environment.api_url}/token`)
+            .pipe(takeWhile(() => this.alive))
+            .subscribe((data) => {
+                this.token = data['token'];
+                this.store.dispatch(new SetToken(data['token'])); // Сохраняем токен в стор
+            });
     }
 
     registerUser(data: FormData): Observable<object> {
         return this.http.post(`${environment.api_url}/users`, data, {headers: {'Token': this.token}});
+    }
+
+    ngOnDestroy(): void {
+        this.alive = false;
     }
 
 }

@@ -2,6 +2,7 @@ import {Component, forwardRef, Input, OnInit} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
+
 import {SharedService} from '../../../services/shared.service';
 import {IPosition} from '../../../interfaces';
 

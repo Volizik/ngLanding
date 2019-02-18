@@ -8,8 +8,11 @@
 
   &__wrap
     color: #fff
-    background: url('~src/assets/images/bg-1.jpg') top center no-repeat
-    background-size: 100%
+    background: url('~src/assets/images/bg-1-min.jpg') top center no-repeat
+    background-size: cover
+    @media (min-width: 1920px)
+      background: url('~src/assets/images/bg-1.jpg') top center no-repeat
+      background-size: cover
     @media (min-width: 1200px)
       background-position: center
     @media #{$l}

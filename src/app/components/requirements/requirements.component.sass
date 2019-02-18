@@ -3,8 +3,11 @@
 .requirements
   padding-bottom: 104px
   color: #fff
-  background: url('~src/assets/images/bg-2.jpg') center center no-repeat
+  background: url('~src/assets/images/bg-2-min.jpg') center center no-repeat
   background-size: 100%
+  @media (min-width: 1920px)
+    background: url('~src/assets/images/bg-2.jpg') center center no-repeat
+    background-size: cover
   @media #{$lte-m}
     background-size: cover
   @media #{$s}
