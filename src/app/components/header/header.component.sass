@@ -8,13 +8,17 @@
 
   &__wrap
     color: #fff
-    background: url('~src/assets/images/bg-1-min.jpg') top center no-repeat
+    background: url('~src/assets/images/bg-1.jpg') top center no-repeat
     background-size: cover
-    @media (min-width: 1920px)
-      background: url('~src/assets/images/bg-1.jpg') top center no-repeat
+    @media (max-width: 2560px)
+      background: url('~src/assets/images/bg-1.2560px.jpg') top center no-repeat
       background-size: cover
-    @media (min-width: 1200px)
-      background-position: center
+    @media (max-width: 1920px)
+      background: url('~src/assets/images/bg-1.1920px.jpg') top center no-repeat
+      background-size: cover
+    @media (max-width: 780px)
+      background: url('~src/assets/images/bg-1.780px.jpg') top center no-repeat
+      background-size: cover
     @media #{$l}
       padding: 130px 0 140px
     @media #{$lte-m}

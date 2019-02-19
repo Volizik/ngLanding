@@ -3,10 +3,16 @@
 .requirements
   padding-bottom: 104px
   color: #fff
-  background: url('~src/assets/images/bg-2-min.jpg') center center no-repeat
+  background: url('~src/assets/images/bg-2.jpg') center center no-repeat
   background-size: 100%
-  @media (min-width: 1920px)
-    background: url('~src/assets/images/bg-2.jpg') center center no-repeat
+  @media (max-width: 2560px)
+    background: url('~src/assets/images/bg-2.2560px.jpg') top center no-repeat
+    background-size: cover
+  @media (max-width: 1920px)
+    background: url('~src/assets/images/bg-2.1920px.jpg') top center no-repeat
+    background-size: cover
+  @media (max-width: 780px)
+    background: url('~src/assets/images/bg-2.780px.jpg') top center no-repeat
     background-size: cover
   @media #{$lte-m}
     background-size: cover
