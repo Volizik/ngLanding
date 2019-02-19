@@ -1,0 +1,19 @@
+$Overpass: 'Overpass', sans-serif
+$SourceSans: 'Source Sans Pro', sans-serif
+
+$l: "only screen and (min-width: 1024px)"
+$m: "only screen and (min-width: 768px) and (max-width: 1023px)"
+$s: "only screen and (max-width: 767px)"
+$lte-m: "only screen and (max-width: 1023px)"
+
+$primary-color: rgb(239, 108, 0)
+$secondary-color: rgb(40, 53, 147)
+$background-color: rgb(255, 255, 255)
+
+@mixin overflow-text($width: 'auto')
+  position: relative
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+  @if($width != 'auto')
+    width: $width

@@ -1,4 +1,4 @@
-@import '~src/styles/global'
+@import '~src/vars'
 
 .footer
   font-family: $SourceSans
@@ -10,11 +10,9 @@
       @media #{$s}
         align-items: center
     a
+      color: #fff
       @media #{$s}
         margin-bottom: 6px
-      color: #fff
-      &:before
-        background-color: #fff
       &:last-of-type
         display: none
 
@@ -39,6 +37,7 @@
   &__contact
     display: flex
     flex-direction: column
+
     &_item
       margin-bottom: 23px
       display: flex
@@ -49,6 +48,7 @@
       @media #{$s}
         margin-bottom: 11px
         justify-content: center
+
     &_icon
       margin-right: 10px
       display: inline-flex
@@ -57,8 +57,10 @@
       width: 24px
       @media #{$lte-m}
         display: none
+
       svg-icon-sprite
         display: flex
+
     &_text
       display: flex
       align-items: center
@@ -86,6 +88,7 @@
       max-width: 485px
     @media #{$s}
       display: none
+
     &_link
       margin-bottom: 10px
       display: block
@@ -99,7 +102,7 @@
       @media #{$m}
         max-width: 110px
       &:hover
-        text-decoration: underline
+        color: $primary-color
 
   &__copyright
     margin-top: 20px
@@ -119,10 +122,13 @@
       display: flex
       justify-content: space-between
       width: 210px
+
     &_link
       display: inline-block
       margin-left: 20px
       color: #fff
       @media #{$s}
         margin: 0
+      &:hover
+        color: $primary-color
 
